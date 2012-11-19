@@ -1,0 +1,21 @@
+%YAML 1.1
+---
+- sgl_api_version
+- sgl_api_function
+- sgl_api_action
+- sgl_user_action
+- sgl_user_view
+- sgl_user_profile
+- sgl_club
+- sgl_admin_action
+- sgl_admin_view
+- sgl_frontend_action
+- sgl_frontend_view
+- action
+- sgl_event_year
+- sgl_event_region
+- sgl_event
+- register
+- region
+- sgl_haxx_action
+...
