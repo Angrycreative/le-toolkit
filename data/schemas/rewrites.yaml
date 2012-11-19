@@ -1,0 +1,42 @@
+%YAML 1.1
+---
+# JSON API 
+'^api/1/([^/]+)/([^/]+)?$': 'index.php?sgl_api_version=1&sgl_api_function=$matches[1]&sgl_api_action=$matches[2]'
+
+# Admin dashboard 
+'^admin$': 'index.php?sgl_admin_action=admin&sgl_admin_view=dashboard'
+
+# Admin funktioner för användare
+'^admin/anvandare$': 'index.php?sgl_admin_action=users&sgl_admin_view=archive'
+'^admin/anvandare/lagg-till$': 'index.php?sgl_admin_action=users&sgl_admin_view=create_user'
+'^admin/anvandare/redigera/([A-Za-z0-9-_/]+)?$': 'index.php?sgl_admin_action=users&sgl_admin_view=edit_user&sgl_user_profile=$matches[1]'
+'^admin/anvandare/visa/([A-Za-z0-9-_/]+)?$': 'index.php?sgl_admin_action=users&sgl_admin_view=single&sgl_user_profile=$matches[1]'
+
+# Administration för klubbar
+'^admin/klubbar$': 'index.php?sgl_admin_action=clubs&sgl_admin_view=archive'
+'^admin/klubbar/lagg-till$': 'index.php?sgl_admin_action=clubs&sgl_admin_view=create_club'
+'^admin/klubbar/visa/([A-Za-z0-9-_/]+)?$': 'index.php?sgl_admin_action=clubs&sgl_admin_view=single&sgl_club=$matches[1]'
+'^admin/klubbar/redigera/([A-Za-z0-9-_/]+)?$': 'index.php?sgl_admin_action=clubs&sgl_admin_view=edit_club&sgl_club=$matches[1]'
+
+# Tävlingar >-<
+'^admin/tavlingar$': 'index.php?sgl_admin_action=event&sgl_admin_view=archive'
+'^admin/tavlingar/visa/([A-Za-z0-9-_/]+)?$': 'index.php?sgl_admin_action=event&sgl_admin_view=single&sgl_event=$matches[1]'
+'^admin/tavlingar/lagg-till$': 'index.php?sgl_admin_action=event&sgl_admin_view=new'
+
+'^admin/tavlingar/registrering/([A-Za-z0-9-_/]+)/([0-9]{0,4})/([A-Za-z0-9-_/]+)': 'index.php?sgl_admin_action=event&sgl_admin_view=registration&sgl_event_region=$matches[1]&sgl_event_year=$matches[2]&sgl_event=$matches[3]'
+'^admin/tavlingar/matchpooler/([A-Za-z0-9-_/]+)/([0-9]{0,4})/([A-Za-z0-9-_/]+)': 'index.php?sgl_admin_action=event&sgl_admin_view=matchpools&sgl_event_region=$matches[1]&sgl_event_year=$matches[2]&sgl_event=$matches[3]'
+'^admin/tavlingar/deltagare/([A-Za-z0-9-_/]+)/([0-9]{0,4})/([A-Za-z0-9-_/]+)': 'index.php?sgl_admin_action=event&sgl_admin_view=participants&sgl_event_region=$matches[1]&sgl_event_year=$matches[2]&sgl_event=$matches[3]'
+'^admin/tavlingar/matchresultat/([A-Za-z0-9-_/]+)/([0-9]{0,4})/([A-Za-z0-9-_/]+)': 'index.php?sgl_admin_action=event&sgl_admin_view=matchresults&sgl_event_region=$matches[1]&sgl_event_year=$matches[2]&sgl_event=$matches[3]'
+
+# "Vanliga sidor"
+'^nyheter$': 'index.php?post_type=post'
+'^ranking$': 'index.php?sgl_user_action=user&sgl_user_view=ranking'
+'^registrera$': 'index.php?sgl_user_action=user&sgl_user_view=register'
+
+'^mina-sidor$': 'index.php?sgl_user_action=dashboard'
+'^mina-sidor/logga-in$': 'index.php?sgl_user_action=user&sgl_user_view=login-page'
+'^mina-sidor/profil$': 'index.php?sgl_user_action=user&sgl_user_view=profile'
+'^mina-sidor/([A-Za-z0-9-_/]+)?$': 'index.php?sgl_user_action=$matches[1]'
+'^anvandare/([A-Za-z0-9\-_/]+)?$': 'index.php?sgl_admin_action=users&sgl_admin_view=single&sgl_user_profile=$matches[1]'
+
+...
